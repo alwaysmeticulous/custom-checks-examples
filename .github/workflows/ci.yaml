@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request: {}
+
+jobs:
+  typecheck:
+    name: Type-check examples
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Enable pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Use Node.js LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Each top-level directory with a package.json is a standalone example.
+      # Install its dependencies and type-check it, so a broken example fails CI.
+      - name: Type-check each example
+        shell: bash
+        run: |
+          set -euo pipefail
+          found=0
+          for dir in */; do
+            if [ -f "${dir}package.json" ]; then
+              found=1
+              echo "::group::${dir%/}"
+              (cd "$dir" && pnpm install --frozen-lockfile && pnpm run typecheck)
+              echo "::endgroup::"
+            fi
+          done
+          if [ "$found" -eq 0 ]; then
+            echo "No example projects found"
+            exit 1
+          fi

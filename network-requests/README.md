@@ -36,11 +36,9 @@ stdout **without** reporting anything back — useful for local iteration.
 ## Prerequisites
 
 - **Node.js 18+**
-- A **project- or user-scoped** `METICULOUS_API_TOKEN`. A test-run-scoped token
-  is **not** sufficient — the script resolves the test run, its base, and
-  downloads snapshots.
-- A **test run that produced `network-requests` snapshots** with a **resolvable
-  base** test run (the check compares head against base).
+- A **project- or user-scoped** `METICULOUS_API_TOKEN`.
+- **Custom snapshots turned on for your project** — ask a Meticulous admin to
+  enable them.
 
 ## Install
 

@@ -1,0 +1,23 @@
+{
+  "name": "react-component-renders-custom-check",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Example custom check that warns when individual React components render more on head than base",
+  "license": "ISC",
+  "scripts": {
+    "report": "ts-node report-react-component-renders.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@alwaysmeticulous/custom-checks": "^2.300.0",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.10",
+    "ts-node": "^10.8.1",
+    "typescript": "^5.9.3"
+  }
+}

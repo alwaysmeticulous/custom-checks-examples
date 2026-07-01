@@ -10,4 +10,5 @@ SDK.
 | Example | Description |
 | ------- | ----------- |
 | [network-requests](./network-requests/) | Compare per-session network request counts on head vs. base and warn when capacity is exceeded |
+| [js-bundle-sizes](./js-bundle-sizes/) | Compare the total JS bundle size each session loaded on head vs. base and warn when it grows materially |
 | [react-component-renders](./react-component-renders/) | Compare per-component React render counts on head vs. base and warn when an individual component re-renders materially more often |

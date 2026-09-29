@@ -12,7 +12,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@alwaysmeticulous/custom-checks": "^2.300.0",
+    "@alwaysmeticulous/custom-checks": "^2.342.0",
     "yargs": "^17.5.1"
   },
   "devDependencies": {
